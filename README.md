@@ -2,12 +2,14 @@
 > 通过萤石云的开放文档封装了一些需要的 API
 
 1. 更改设备名称
-   - /changename
+   - /api/changename
 3. 加密解密设备
-   - /encrypt /decrypt
+   - /api/encrypt /api/decrypt
 5. 获取设备信息
-   - /info
+   - /api/info
 7. 获取设备列表
-   - /list
+   - /api/list
 9. 获取设备监控链接地址
-   - /live
+   - /api/live
+10. 模糊查询摄像头，返回一个数组，查询关键字为摄像头名称
+   - /api/search
