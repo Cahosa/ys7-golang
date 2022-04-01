@@ -8,9 +8,10 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"strconv"
 )
 
-func GetDeviceList(pageStart, pageSize string) ([]byte, string) {
+func GetCameraList(pageStart, pageSize int) ([]byte, string) {
 	listUrl := config.List
 
 	token, err := api.Token()
@@ -19,7 +20,7 @@ func GetDeviceList(pageStart, pageSize string) ([]byte, string) {
 	}
 
 	params := url.Values{
-		"accessToken": {token}, "pageStart": {pageStart}, "pageSize": {pageSize},
+		"accessToken": {token}, "pageStart": {strconv.Itoa(pageStart)}, "pageSize": {strconv.Itoa(pageSize)},
 	}
 
 	resp, err := http.PostForm(listUrl, params)
@@ -28,7 +29,7 @@ func GetDeviceList(pageStart, pageSize string) ([]byte, string) {
 	}
 
 	body, _ := ioutil.ReadAll(resp.Body)
-	listJson := config.DeviceList{}
+	listJson := config.CameraList{}
 	json.Unmarshal(body, &listJson)
 	data, _ := json.Marshal(listJson)
 

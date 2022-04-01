@@ -27,6 +27,12 @@ var rootRoute = routers{
 
 var apiRoute = routers{
 	route{
+		"deviceSearch",
+		"POST",
+		"/search",
+		handlers.DeviceSearch,
+	},
+	route{
 		"deviceList",
 		"POST",
 		"/list",

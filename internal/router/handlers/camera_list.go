@@ -4,15 +4,20 @@ import (
 	"Ys7/config"
 	"Ys7/internal/api/device"
 	"net/http"
+	"strconv"
 )
 
 func DeviceList(w http.ResponseWriter, r *http.Request) {
 	var (
-		pageStart = r.FormValue("pageStart")
-		pageSize  = r.FormValue("pageSize")
+		pageStart, _ = strconv.Atoi(r.FormValue("pageStart"))
+		pageSize, _  = strconv.Atoi(r.FormValue("pageSize"))
 	)
 
-	data, code := device.GetDeviceList(pageStart, pageSize)
+	if pageSize == 0 {
+		pageSize = 10
+	}
+
+	data, code := device.GetCameraList(pageStart, pageSize)
 	if code != "200" {
 		ErrorHandler(w, config.ErrorCode[code], "400")
 		return

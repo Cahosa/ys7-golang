@@ -5,7 +5,7 @@ import "Ys7/utils"
 var (
 	Live             = "https://open.ys7.com/api/lapp/v2/live/address/get"
 	Token            = "https://open.ys7.com/api/lapp/token/get"
-	List             = "https://open.ys7.com/api/lapp/device/list"
+	List             = "https://open.ys7.com/api/lapp/camera/list"
 	Info             = "https://open.ys7.com/api/lapp/device/info"
 	ChangeDeviceName = "https://open.ys7.com/api/lapp/device/name/update"
 	Decrypt          = "https://open.ys7.com/api/lapp/device/encrypt/off"

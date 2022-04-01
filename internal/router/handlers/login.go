@@ -19,7 +19,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// 请求成功
-	log.Println("Login Success ", r.RequestURI)
-	http.SetCookie(w, &http.Cookie{Name: "token", Value: config.Username, Path: "/", Expires: time.Now().AddDate(20, 0, 0), HttpOnly: false})
-	w.Write([]byte("ok"))
+	log.Println("user auth success", r.RequestURI)
+	http.SetCookie(w, &http.Cookie{Name: "token", Value: config.Username, Path: "/", Expires: time.Now().AddDate(20, 0, 0), HttpOnly: false, SameSite: http.SameSiteLaxMode})
+	w.Write([]byte("login success"))
 }

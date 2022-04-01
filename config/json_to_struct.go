@@ -14,16 +14,21 @@ type TokenResp struct {
 	} `json:"data"`
 }
 
-type DeviceList struct {
+type CameraList struct {
 	Msg  string `json:"msg"`
 	Code string `json:"code"`
 	Data []struct {
-		DeviceSerial  string `json:"deviceSerial"`
-		DeviceName    string `json:"deviceName"`
-		DeviceType    string `json:"deviceType"`
-		Status        int    `json:"status"`
-		DeviceVersion string `json:"deviceVersion"`
-		AddTime       int64  `json:"addTime"`
+		ID           string `json:"id"`
+		DeviceSerial string `json:"deviceSerial"`
+		ChannelNo    int    `json:"channelNo"`
+		ChannelName  string `json:"channelName"`
+		Status       int    `json:"status"`
+		IsShared     string `json:"isShared"`
+		PicURL       string `json:"picUrl"`
+		IsEncrypt    int    `json:"isEncrypt"`
+		VideoLevel   int    `json:"videoLevel"`
+		Permission   int    `json:"permission"`
+		IsAdd        int    `json:"isAdd"`
 	} `json:"data"`
 	Page struct {
 		Total int `json:"total"`

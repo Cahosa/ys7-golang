@@ -16,8 +16,8 @@ func ErrorHandler(w http.ResponseWriter, msg string, code string) http.ResponseW
 	}
 	message, _ := json.Marshal(errJson)
 
-	intCode, _ := strconv.ParseInt(code, 10, 0)
-	w.WriteHeader(int(intCode))
+	intCode, _ := strconv.Atoi(code)
+	w.WriteHeader(intCode)
 	w.Write(message)
 
 	return w
