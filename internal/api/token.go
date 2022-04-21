@@ -18,8 +18,8 @@ var CacheData = cache.New(0, 0)
 func getToken() {
 	var (
 		appkeyUrl = "https://open.ys7.com/api/lapp/token/get"
-		appkey    = ""
-		secret    = ""
+		appkey    = "98e6bd74c55e4589b959f26ddf6efd4a"
+		secret    = "cffea9ef9f023baa585075fd502707bd"
 	)
 
 	params := url.Values{"appKey": {appkey}, "appSecret": {secret}}

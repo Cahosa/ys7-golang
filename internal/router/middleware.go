@@ -9,7 +9,7 @@ import (
 
 func CheackCookie(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		cookie, err := r.Cookie("Authorization")
+		cookie, err := r.Cookie("token")
 
 		if err != nil || cookie.Value != config.Username {
 			log.Printf("Cookie check failed: %s\n", r.RequestURI)
@@ -23,7 +23,7 @@ func CheackCookie(next http.Handler) http.Handler {
 
 func SetCorsHeader(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Access-Control-Allow-Origin", "http://localhost:3000")
+		w.Header().Set("Access-Control-Allow-Origin", "http://192.168.0.106:3000")
 		w.Header().Set("Access-Control-Allow-Credentials", "true")
 		next.ServeHTTP(w, r)
 	})

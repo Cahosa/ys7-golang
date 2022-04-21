@@ -17,7 +17,7 @@ func DeviceSearch(key string) ([]byte, string) {
 		pageSize  = 50
 		total     = 1
 	)
-	cameraListInfo := config.CameraList{}
+	cameraListInfo := config.DeviceList{}
 
 	data := []interface{}{}
 
@@ -31,9 +31,10 @@ func DeviceSearch(key string) ([]byte, string) {
 		json.Unmarshal(rsp, &cameraListInfo)
 
 		for _, item := range cameraListInfo.Data {
-			name := item.ChannelName
+			name := item.DeviceName
+      serial := item.DeviceSerial
 
-			if strings.Contains(name, key) {
+			if strings.Contains(name, key) || strings.Contains(serial, key) {
 				data = append(data, item)
 			}
 		}

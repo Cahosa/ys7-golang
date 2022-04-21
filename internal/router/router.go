@@ -27,6 +27,18 @@ var rootRoute = routers{
 
 var apiRoute = routers{
 	route{
+		"accessToken",
+		"GET",
+		"/token",
+		handlers.AccessToken,
+	},
+	route{
+		"deviceCapture",
+		"POST",
+		"/capture",
+		handlers.DeviceCapture,
+	},
+	route{
 		"deviceSearch",
 		"POST",
 		"/search",

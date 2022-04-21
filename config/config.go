@@ -5,16 +5,17 @@ import "Ys7/utils"
 var (
 	Live             = "https://open.ys7.com/api/lapp/v2/live/address/get"
 	Token            = "https://open.ys7.com/api/lapp/token/get"
-	List             = "https://open.ys7.com/api/lapp/camera/list"
+	List             = "https://open.ys7.com/api/lapp/device/list"
 	Info             = "https://open.ys7.com/api/lapp/device/info"
 	ChangeDeviceName = "https://open.ys7.com/api/lapp/device/name/update"
 	Decrypt          = "https://open.ys7.com/api/lapp/device/encrypt/off"
 	Encrypt          = "https://open.ys7.com/api/lapp/device/encrypt/on"
+	Capture          = "https://open.ys7.com/api/lapp/device/capture"
 )
 
 var (
-	Username = utils.MD5("")
-	Password = utils.MD5("")
+	Username = utils.MD5("kaho")
+	Password = utils.MD5("123")
 )
 
 var ErrorCode = map[string]string{

@@ -14,21 +14,30 @@ type TokenResp struct {
 	} `json:"data"`
 }
 
-type CameraList struct {
+type DeviceCapture struct {
+	Msg  string `json:"msg"`
+	Code string `json:"code"`
+	Data struct {
+		PicURL string `json:"picUrl"`
+	} `json:"data"`
+}
+
+type DeviceList struct {
 	Msg  string `json:"msg"`
 	Code string `json:"code"`
 	Data []struct {
-		ID           string `json:"id"`
-		DeviceSerial string `json:"deviceSerial"`
-		ChannelNo    int    `json:"channelNo"`
-		ChannelName  string `json:"channelName"`
-		Status       int    `json:"status"`
-		IsShared     string `json:"isShared"`
-		PicURL       string `json:"picUrl"`
-		IsEncrypt    int    `json:"isEncrypt"`
-		VideoLevel   int    `json:"videoLevel"`
-		Permission   int    `json:"permission"`
-		IsAdd        int    `json:"isAdd"`
+		ID             string `json:"id"`
+		DeviceSerial   string `json:"deviceSerial"`
+		DeviceName     string `json:"deviceName"`
+		DeviceType     string `json:"deviceType"`
+		Status         int    `json:"status"`
+		Defence        int    `json:"defence"`
+		DeviceVersion  string `json:"deviceVersion"`
+		AddTime        int64  `json:"addTime"`
+		UpdateTime     int64  `json:"updateTime"`
+		ParentCategory string `json:"parentCategory"`
+		RiskLevel      int    `json:"riskLevel"`
+		NetAddress     string `json:"netAddress"`
 	} `json:"data"`
 	Page struct {
 		Total int `json:"total"`

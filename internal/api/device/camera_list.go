@@ -29,7 +29,7 @@ func GetCameraList(pageStart, pageSize int) ([]byte, string) {
 	}
 
 	body, _ := ioutil.ReadAll(resp.Body)
-	listJson := config.CameraList{}
+	listJson := config.DeviceList{}
 	json.Unmarshal(body, &listJson)
 	data, _ := json.Marshal(listJson)
 
